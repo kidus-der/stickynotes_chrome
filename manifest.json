@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Tab Notes",
+    "version": "0.0.0.1",
+    "description": "Create unique sticky notes for each tab",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/sticky_16.png",
+        "48": "icons/sticky_48.png",
+        "128": "icons/sticky_128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["content.css"]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
